@@ -3,6 +3,7 @@
 module Dummy_Dut (
     DPRAM_Interface dif
   );
+  import uvm_pkg::*;
 
   string message;
 
