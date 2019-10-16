@@ -36,6 +36,6 @@ module Top;
     );
     
     // Executes test - Class name as argument
-    //run_test("Base_Test");
+    run_test("Base_Test");
   end
 endmodule: Top
