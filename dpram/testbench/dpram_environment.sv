@@ -1,3 +1,6 @@
+`ifndef __DPRAM_ENVIRONMENT_SV
+`define __DPRAM_ENVIRONMENT_SV
+
 //
 
 //  Class: dpram_environment
@@ -12,3 +15,4 @@ class DPRAM_Environment extends uvm_env;
   endfunction: new
   
 endclass: DPRAM_Environment
+`endif

@@ -16,8 +16,17 @@ class Base_Test extends uvm_test;
   function void build_phase(uvm_phase phase);
     this.dpram_env = dpram_environment::type_id::create("dpram_env", this);
   endfunction: build_phase
-  
 
+  task run_phase(uvm_phase phase);
+    phase.raise_objection(this);
+    
+    #10
+    `uvm_info(get_name(), "Yeah! It is working", UVM_MEDIUM)
+    
+    phase.drop_objection(this);
+  endtask: run_phase
+  
+  // todo:
   local DPRAM_Interface dpram_vif;
   protected 
   
