@@ -3,7 +3,7 @@
 
 //  Class: Base_Test  
 //
-class se_Test extends uvm_test;
+class Base_Test extends uvm_test;
   `uvm_component_utils(Base_Test);
 
   //  Constructor: new
@@ -11,11 +11,9 @@ class se_Test extends uvm_test;
     super.new(name, parent);
   endfunction: new
 
-  local DPRAM_Interface DPRAM_readVirtualInterface;
-  local DPRAM_Interface DPRAM_writeVirtualInterface;
+  local DPRAM_Interface dpram_vif;
   protected 
   
 endclass: Base_Test
-
 
 `endif
