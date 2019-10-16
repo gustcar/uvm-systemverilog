@@ -20,7 +20,7 @@ class Base_Test extends uvm_test;
   task run_phase(uvm_phase phase);
     phase.raise_objection(this);
     
-    #10
+    #10;
     `uvm_info(get_name(), "Yeah! It is working", UVM_MEDIUM)
     
     phase.drop_objection(this);
