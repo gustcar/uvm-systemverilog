@@ -33,7 +33,7 @@ class DPRAM_Environment extends uvm_env;
     //     )
     // ) begin
     //   $display(" => ENV VIRTUAL INTERFACE HERE");
-    //   `uvm_warning(get_name(), "=> [ENV] Virtual interface set in dpram_vif field corretly")
+    //   `uvm_warning(get_name(), "=> [ENV] Virtual interface set in dpram_vif field correctly")
     // end else `uvm_fatal(get_name(), "=> [ENV] Impossible to get the virtual interface from config_db")
     
   endfunction: build_phase

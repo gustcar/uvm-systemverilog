@@ -21,7 +21,7 @@ class Base_Test extends uvm_test;
     // Get the Virtual Interface named <dpram_interface> from Config_DB
     assert (uvm_config_db#(virtual DPRAM_Interface)::get(this, "", "dpram_interface", dpram_vif)) begin
       $display(" => BASE TEST VIRTUAL INTERFACE HERE");
-      `uvm_warning(get_name(), "=> [BASE TEST] Virtual interface set in dpram_vif field corretly")
+      `uvm_warning(get_name(), "=> [BASE TEST] Virtual interface set in dpram_vif field correctly")
     end else `uvm_fatal(get_name(), "=> [BASE TEST] Impossible to get the virtual interface from config_db")
 
     // Set the Virtual Interface to the environment (for now)
