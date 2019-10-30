@@ -10,8 +10,10 @@ import    uvm_pkg::*;
 
 // Include files for compiling
 // file dependencies
-//`include  "base_test.sv"
-`include "dpram_interface.sv"
+`include  "dpram_agent.sv"
+`include  "dpram_environment.sv"
+`include  "base_test.sv"
+`include  "dpram_interface.sv"
 
 // testbench top module. It starts the test
 module Top;
@@ -31,8 +33,8 @@ module Top;
     uvm_config_db#(virtual DPRAM_Interface)::set(
       null,
       "uvm_test_top",
-      "dpram_interface", // x
-      dpram_interface    // x
+      "dpram_interface",
+      dpram_interface   
     );
     
     // Executes test - Class name as argument
