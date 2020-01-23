@@ -1,3 +1,6 @@
+`ifndef __PIPE_DRIVER_SV
+`define __PIPE_DRIVER_SV
+
 class Pipe_Driver extends uvm_driver #(Data_Packet);
   `uvm_component_utils(Pipe_Driver)
 
@@ -38,6 +41,8 @@ class Pipe_Driver extends uvm_driver #(Data_Packet);
   virtual task get_and_drive();
     forever begin
       while (pipe_vif.rst_n != 1'b0) begin
+        // < req > is a data member of uvm_driver class. Its type is REQ.
+        // REQ has the type Data Packet in this context.
         seq_item_port.get_next_item(req);
         drive_packet(req);
         seq_item_port.item_done();
@@ -56,3 +61,5 @@ class Pipe_Driver extends uvm_driver #(Data_Packet);
     pipe_vif.enable = 1'b0;
   endtask : drive_packet
 endclass : Pipe_Driver
+
+`endif
