@@ -1,3 +1,6 @@
+`ifndef __PIPE_INTERFACE_SV
+`define __PIPE_INTERFACE_SV
+
 // Simple interface for now
 interface Pipe_Interface (input logic clk, rst_n);
   // correction_factor
@@ -11,3 +14,5 @@ interface Pipe_Interface (input logic clk, rst_n);
   // Enable signal
   logic enable;
 endinterface : Pipe_Interface
+
+`endif
