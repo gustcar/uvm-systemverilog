@@ -1,3 +1,6 @@
+`ifndef __PIPE_TRANSACTION_SV
+`define __PIPE_TRANSACTION_SV
+
 class Data_Packet extends uvm_sequence_item;
   // Data to be randomized
   rand  bit [1:0]   correction_factor;
@@ -26,3 +29,5 @@ class Data_Packet extends uvm_sequence_item;
     super.new(name);
   endfunction
 endclass
+
+`endif
