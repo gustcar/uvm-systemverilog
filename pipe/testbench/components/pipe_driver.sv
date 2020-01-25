@@ -7,7 +7,7 @@ class Pipe_Driver extends uvm_driver #(Data_Packet);
   virtual Pipe_Interface pipe_vif;
 
   // Constructor
-  function new (string name, uvm_component parent);
+  function new (string name = "Pipe_Driver", uvm_component parent);
     super.new(name, parent);
   endfunction
   
