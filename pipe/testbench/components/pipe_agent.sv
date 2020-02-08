@@ -7,9 +7,12 @@ class Pipe_Agent extends uvm_agent;
   //  Fields
   protected uvm_active_passive_enum is_active = UVM_ACTIVE;
 
+  // TLM analysis port
+  uvm_analysis_port #(Data_Packet) item_collected_port;
+
   // uvm components' declaration [composition]
   Pipe_Sequencer  pipe_sequencer;
-  Pipe_Driver     pipe_Driver;
+  Pipe_Driver     pipe_driver;
   Pipe_Monitor    pipe_monitor;
 
   // register agent class with factory
@@ -56,6 +59,10 @@ class Pipe_Agent extends uvm_agent;
     if (is_active == UVM_ACTIVE) begin
       pipe_driver.seq_item_port.connect(pipe_sequencer.seq_item_export);
     end
+
+    // Code modified to simplify the connect method in the environment
+    // connect monitor's analysis port to agent's analysis port
+    pipe_monitor.item_collected_port.connect(this.item_collected_port);
 
     // Connect phase completed
     `uvm_info(
